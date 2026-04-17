@@ -3,13 +3,13 @@ package second_level.format.format_factory.concrete_factories;
 import second_level.format.format_factory.abstract_factory.FormatFactory;
 import second_level.format.formatter.abstract_formatter.AddressFormatter;
 import second_level.format.formatter.abstract_formatter.PhoneNumberFormatter;
-
-public class SpainFormatFactory implements FormatFactory {
+import second_level.format.formatter.concrete_formatters.SpainAddressFormatter;
+import second_level.format.formatter.concrete_formatters.SpainPhoneNumberFormatter;
 
     public class SpainFormatFactory implements FormatFactory{
         @Override
         public AddressFormatter createAdressFormatter() {
-            return new SpainAdressFormatter();
+            return new SpainAddressFormatter();
         }
 
         @Override
@@ -17,4 +17,3 @@ public class SpainFormatFactory implements FormatFactory {
             return new SpainPhoneNumberFormatter();
         }
     }
-}
