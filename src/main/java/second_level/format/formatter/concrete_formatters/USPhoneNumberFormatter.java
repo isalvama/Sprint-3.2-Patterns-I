@@ -1,19 +1,18 @@
 package second_level.format.formatter.concrete_formatters;
 
-import second_level.format.NANPPhoneValidator;
 import second_level.format.PhoneValidator;
 import second_level.format.formatter.abstract_formatter.PhoneNumberFormatter;
 
-public class NANPPhoneNumberFormatter implements PhoneNumberFormatter {
-    private final PhoneValidator nanpPhoneValidator;
+public class USPhoneNumberFormatter implements PhoneNumberFormatter {
+    private final PhoneValidator usPhoneValidator;
 
-    public NANPPhoneNumberFormatter () {
-        this.nanpPhoneValidator = new NANPPhoneValidator();
+    public USPhoneNumberFormatter(PhoneValidator phoneValidator) {
+        this.usPhoneValidator = phoneValidator;
     }
 
     @Override
     public String formatPhone(long number) {
-        String numStr = nanpPhoneValidator.validatePhone(number);
+        String numStr = usPhoneValidator.validatePhone(number);
         return String.format("+1 %s %s %s", numStr.substring(0, 3), numStr.substring(3, 6), numStr.substring(6, 9));
     }
 }

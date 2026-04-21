@@ -7,8 +7,8 @@ import second_level.format.formatter.abstract_formatter.PhoneNumberFormatter;
 public class SpainPhoneNumberFormatter implements PhoneNumberFormatter {
     private final PhoneValidator spanishPhoneValidator;
 
-    public SpainPhoneNumberFormatter () {
-        spanishPhoneValidator = new SpanishPhoneValidator();
+    public SpainPhoneNumberFormatter (PhoneValidator phoneValidator) {
+        spanishPhoneValidator = phoneValidator;
     }
 
     @Override

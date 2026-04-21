@@ -1,13 +1,14 @@
 package second_level.format.formatter.concrete_formatters;
 
 import second_level.format.FrancePhoneValidator;
+import second_level.format.PhoneValidator;
 import second_level.format.formatter.abstract_formatter.PhoneNumberFormatter;
 
 public class FrancePhoneNumberFormatter implements PhoneNumberFormatter {
-    private final FrancePhoneValidator francePhoneValidator;
+    private final PhoneValidator francePhoneValidator;
 
-    public FrancePhoneNumberFormatter () {
-        this.francePhoneValidator = new FrancePhoneValidator();
+    public FrancePhoneNumberFormatter (PhoneValidator phoneValidator) {
+        this.francePhoneValidator = phoneValidator;
     }
 
     @Override
