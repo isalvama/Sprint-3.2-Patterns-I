@@ -1,5 +1,9 @@
 package second_level.format.format_factory.concrete_factories;
 
+import second_level.format.AddressValidator;
+import second_level.format.FranceAddressValidator;
+import second_level.format.FrancePhoneValidator;
+import second_level.format.PhoneValidator;
 import second_level.format.format_factory.abstract_factory.FormatFactory;
 import second_level.format.formatter.abstract_formatter.AddressFormatter;
 import second_level.format.formatter.abstract_formatter.PhoneNumberFormatter;
@@ -10,11 +14,13 @@ public class FranceFormatFactory implements FormatFactory {
 
     @Override
     public AddressFormatter createAdressFormatter() {
-        return new FranceAddressFormatter();
+        AddressValidator addressValidator = new FranceAddressValidator();
+        return new FranceAddressFormatter(addressValidator);
     }
 
     @Override
     public PhoneNumberFormatter createPhoneNumberFormatter() {
-        return new FrancePhoneNumberFormatter();
+        PhoneValidator phoneValidator = new FrancePhoneValidator();
+        return new FrancePhoneNumberFormatter(phoneValidator);
     }
 }
