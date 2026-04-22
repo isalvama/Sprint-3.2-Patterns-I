@@ -7,7 +7,7 @@ public class ReportService {
         this.strategy = strategy;
     }
 
-    private Report generateReport(Report report){
+    public Report generateReport(Report report){
      return strategy.generateReport(report);
     }
 }
