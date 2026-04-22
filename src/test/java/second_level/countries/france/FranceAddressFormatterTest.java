@@ -13,7 +13,7 @@ class FranceAddressFormatterTest implements WithAssertions {
     Address address = new FranceAddress("Rue De L'Exposition", 24, "75007", "France", null, null, null, "paris");
     Address address2 = new FranceAddress("Rue De Saint-André D'Ornay", 76, "85000", "France", null, 2, "Apt 25", "La Roche-Sur-Lyon");
     @Test
-    void formatAddress_whenPassingSpanishAddressWithNullMoreInfoFloorAndDoor_returnsFormattedAddress() {
+    void formatAddress_whenPassingFrenchAddressWithNullMoreInfoFloorAndDoor_returnsFormattedAddress() {
         assertThat(franceAddressFormatter.formatAddress(address)).isEqualTo("""
                 24 Rue De L'Exposition
                 75007 PARIS
@@ -21,7 +21,7 @@ class FranceAddressFormatterTest implements WithAssertions {
     }
 
     @Test
-    void formatAddress_whenPassingSpanishAddressWithNullMoreInfo_returnsFormattedAddress() {
+    void formatAddress_whenPassingFrenchAddressWithNullMoreInfo_returnsFormattedAddress() {
         assertThat(franceAddressFormatter.formatAddress(address2)).isEqualTo("""
                 2 Apt 25, 76 Rue De Saint-André D'Ornay
                 85000 LA ROCHE-SUR-LYON

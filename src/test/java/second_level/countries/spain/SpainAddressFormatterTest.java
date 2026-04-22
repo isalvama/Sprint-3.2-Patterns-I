@@ -1,10 +1,8 @@
-package second_level.countries.france;
+package second_level.countries.spain;
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
 import second_level.model.SpanishAddress;
 import second_level.core.validator.AddressValidator;
-import second_level.countries.spain.SpainAddressFormatter;
-import second_level.countries.spain.SpainAddressValidator;
 
 class SpainAddressFormatterTest implements WithAssertions {
     AddressValidator spanishAddressValidator = new SpainAddressValidator();

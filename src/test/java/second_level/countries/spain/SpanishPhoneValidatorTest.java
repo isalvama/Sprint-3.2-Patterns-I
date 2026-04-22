@@ -1,4 +1,4 @@
-package second_level.countries.france;
+package second_level.countries.spain;
 
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import second_level.core.exception.InvalidPhoneException;
 import second_level.core.validator.PhoneValidator;
-import second_level.countries.spain.SpanishPhoneValidator;
 
 import static org.junit.jupiter.api.Assertions.*;
 

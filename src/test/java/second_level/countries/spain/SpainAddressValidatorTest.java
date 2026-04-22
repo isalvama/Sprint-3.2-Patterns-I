@@ -1,4 +1,4 @@
-package second_level.countries.france;
+package second_level.countries.spain;
 
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,6 @@ import second_level.model.Address;
 import second_level.model.FranceAddress;
 import second_level.model.SpanishAddress;
 import second_level.core.validator.AddressValidator;
-import second_level.countries.spain.SpainAddressValidator;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
