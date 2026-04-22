@@ -4,6 +4,6 @@ import second_level.core.formatter.AddressFormatter;
 import second_level.core.formatter.PhoneNumberFormatter;
 
 public interface FormatFactory {
-     AddressFormatter createAdressFormatter();
+     AddressFormatter createAddressFormatter();
      PhoneNumberFormatter createPhoneNumberFormatter();
 }

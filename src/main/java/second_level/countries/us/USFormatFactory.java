@@ -9,7 +9,7 @@ import second_level.core.formatter.PhoneNumberFormatter;
 public class USFormatFactory implements FormatFactory {
 
     @Override
-    public AddressFormatter createAdressFormatter() {
+    public AddressFormatter createAddressFormatter() {
         AddressValidator addressValidator = new USAddressValidator();
         return new USAddressFormatter(addressValidator);
     }

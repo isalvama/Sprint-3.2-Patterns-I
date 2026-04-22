@@ -8,7 +8,7 @@ import second_level.core.formatter.PhoneNumberFormatter;
 
 public class UKFormatFactory implements FormatFactory {
     @Override
-    public AddressFormatter createAdressFormatter() {
+    public AddressFormatter createAddressFormatter() {
         AddressValidator ukAddressValidator = new UKAddressValidator();
         return new UKAddressFormatter(ukAddressValidator);
     }
