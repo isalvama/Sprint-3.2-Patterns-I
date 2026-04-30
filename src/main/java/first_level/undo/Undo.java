@@ -36,7 +36,7 @@ public final class Undo {
 
     public void undoCommand (){
         if (this.commandHistory.isEmpty()) {
-            throw new NoSuchElementException("The last element of the list can not be removed because the list is empty");
+            throw new NoSuchElementException("The last element can not be removed because the list is empty");
         }
         this.commandHistory.removeLast();
     }
@@ -44,5 +44,9 @@ public final class Undo {
     public void removeAllHistory() {
         this.commandHistory.clear();
         Command.setIndex(1);
+    }
+
+    public List<Command> getCommandHistory() {
+        return commandHistory;
     }
 }

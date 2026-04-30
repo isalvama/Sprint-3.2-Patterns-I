@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.WithAssertions;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,8 +21,16 @@ class UndoTest implements WithAssertions{
     }
 
     @Test
-    void getUndo_afterNewlyCreatedInstance_commandHistoryShows2NewObjects() {
-        assertThat(undo.showHistory()).isEqualTo("");
+    void getUndo_afterNewlyCreatedInstance_commandHistoryIsEmpty() {
+        assertThat(Undo.getUndo().getCommandHistory()).isEqualTo(new ArrayList<>());
+        assertThat(Undo.getUndo().getCommandHistory().size()).isEqualTo(0);
+    }
+
+    @Test
+    void addCommand_2NewObjectsAfterNewlyCreatingInstance_commandHistoryHas2NewObjects() {
+        undo.addCommand("touch commands.html");
+        undo.addCommand("cd ../");
+        assertThat(Undo.getUndo().getCommandHistory().size()).isEqualTo(2);
     }
 
     @Test
@@ -33,7 +43,7 @@ class UndoTest implements WithAssertions{
     @Test
     void undoCommand_afterNewlyCreatedInstance_throwsNoSuchElementExceptionWithExpectedMessage() {
         NoSuchElementException exception = assertThrows(NoSuchElementException.class, () -> {undo.undoCommand();});
-        assertEquals("The last element of the list can not be removed because the list is empty", exception.getMessage());
+        assertEquals("The last element can not be removed because the list is empty", exception.getMessage());
     }
 
     @Test
