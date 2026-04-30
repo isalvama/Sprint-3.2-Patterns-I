@@ -20,16 +20,18 @@ A system designed to track user actions and provide "Undo" functionality.
 ### 2️⃣ Level Two: International Address & Phone Directory
 **Pattern: Abstract Factory**
 
-A system that handles contact information (Addresses and Phone Numbers) for multiple countries, ensuring each follows its specific local format and validation rules.
+A system that handles international contact information (Addresses and Phone Numbers) for multiple countries. It ensures that each object created is self-validating and knows how to format itself according to local standards.
 
-*   **Abstract Factory Pattern:** Uses a `FormatFactory` interface to produce specific formatters and validators for different countries without coupling the code to concrete classes.
+*   **Abstract Factory Pattern:** Implements the `ContactFactory` interface to instantiate families of related objects (`Address` and `Phone`) without specifying their concrete classes. Each country has its own factory (e.g., `FranceContactFactory`) that orchestrates the creation of localized products.
 *   **Supported Countries:** Spain, France, UK, and USA.
 *   **Core Components:**
-    *   **Validators:** Check if the input (e.g., French Postal Code or Spanish Phone) meets local requirements.
-    *   **Formatters:** Transform raw data into a human-readable international string (e.g., adding `+33` for France).
-    *   **Custom Exceptions:** Implements `InvalidAddressException` and `InvalidPhoneException` for robust error handling.
+    *   **Abstract Products:** The `Address` and `Phone` abstract classes define the template for all contact data, including mandatory fields and common validation logic.
+    *   **Encapsulated Logic:** Instead of external services, the concrete products (like `FranceAddress`) handle their own **Validation** (`ensureIsValid`) and **Formatting** (`formatAddress`) logic internally.
+    *   **Data Models:** Uses auxiliary classes like `HousingDetails` to manage optional address information (floor, door, etc.) in a clean, reusable way.
+    *   **Robust Error Handling:** Uses custom exceptions (`InvalidAddressException`, `InvalidPhoneException`) to ensure that no object can be instantiated with invalid data.
 
 ---
+
 
 ### 3️⃣ Level Three: Universal Report Generator
 **Pattern: Strategy**
